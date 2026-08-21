@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>झारली जन संवाद | नरपत सिंह शेखावत</title>
+
+  <meta name="description"
+    content="झारली जन संवाद - अपनी समस्या, सुझाव और विचार नरपत सिंह शेखावत तक पहुंचाएं।">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>📞 <a href="tel:+919929582725">+91 99295 82725</a></span>
+  <span>📍 ग्राम पंचायत झारली, राजस्थान</span>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+  <a href="#home" class="logo">
+    <strong>झारली जन संवाद</strong>
+    <small>आपकी आवाज़, हमारा संकल्प</small>
+  </a>
+
+  <button class="menu-toggle" id="menuToggle">
+    ☰
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#home">होम</a>
+    <a href="#problem">समस्या दर्ज करें</a>
+    <a href="#suggestion">सुझाव दें</a>
+    <a href="#updates">अपडेट्स</a>
+    <a href="#about">परिचय</a>
+    <a href="#contact">संपर्क</a>
+  </div>
+
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="tag">
+      ग्राम पंचायत झारली
+    </div>
+
+    <h1>झारली जन संवाद</h1>
+
+    <h2>आपकी आवाज़, हमारा संकल्प</h2>
+
+    <p>
+      अपनी समस्याएं, सुझाव और विचार साझा करें।
+      मिलकर झारली के विकास की दिशा में आगे बढ़ें।
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#problem" class="primary-btn">
+        📝 समस्या दर्ज करें
+      </a>
+
+      <a href="#suggestion" class="secondary-btn">
+        💡 सुझाव दें
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="hero-image">
+    <img src="candidate.jpg" alt="नरपत सिंह शेखावत">
+  </div>
+
+</header>
+
+
+<!-- QUICK ACTIONS -->
+<section class="quick-section">
+
+  <h2 class="section-title">
+    आप क्या करना चाहते हैं?
+  </h2>
+
+  <p class="section-description">
+    अपनी समस्या, सुझाव या गांव से जुड़ी जानकारी आसानी से साझा करें।
+  </p>
+
+  <div class="quick-grid">
+
+    <a href="#problem" class="quick-card">
+      <div class="icon">📝</div>
+      <h3>समस्या दर्ज करें</h3>
+      <p>पानी, सड़क, बिजली, सफाई या अन्य समस्या दर्ज करें।</p>
+    </a>
+
+    <a href="#suggestion" class="quick-card">
+      <div class="icon">💡</div>
+      <h3>सुझाव दें</h3>
+      <p>झारली के विकास के लिए अपने विचार साझा करें।</p>
+    </a>
+
+    <a href="#updates" class="quick-card">
+      <div class="icon">📢</div>
+      <h3>गांव की अपडेट्स</h3>
+      <p>महत्वपूर्ण घोषणाएं और गांव से जुड़ी जानकारी देखें।</p>
+    </a>
+
+    <a href="#contact" class="quick-card">
+      <div class="icon">📞</div>
+      <h3>संपर्क करें</h3>
+      <p>सीधे संपर्क करने के लिए हमारी जानकारी देखें।</p>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- REPORT PROBLEM -->
+<section id="problem" class="form-section">
+
+  <div class="form-container">
+
+    <h2 class="section-title">
+      📝 अपनी समस्या दर्ज करें
+    </h2>
+
+    <p class="section-description">
+      अपनी समस्या का विवरण नीचे दिए गए फॉर्म में भरें।
+    </p>
+
+    <form id="problemForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc1234567890abcdefghijklmnop/formResponse" method="POST" target="_blank">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="problemName">आपका नाम *</label>
+          <input
+            type="text"
+            id="problemName"
+            name="entry.1234567890"
+            required
+            placeholder="अपना नाम लिखें">
+        </div>
+
+        <div class="form-group">
+          <label for="problemMobile">मोबाइल नंबर *</label>
+          <input
+            type="tel"
+            id="problemMobile"
+            name="entry.1234567891"
+            required
+            placeholder="मोबाइल नंबर">
+        </div>
+
+        <div class="form-group">
+          <label for="problemArea">मोहल्ला / क्षेत्र *</label>
+          <input
+            type="text"
+            id="problemArea"
+            name="entry.1234567892"
+            required
+            placeholder="अपना क्षेत्र लिखें">
+        </div>
+
+        <div class="form-group">
+          <label for="problemCategory">समस्या का प्रकार *</label>
+
+          <select id="problemCategory" name="entry.1234567893" required>
+            <option value="">समस्या चुनें</option>
+            <option value="💧 पानी">💧 पानी</option>
+            <option value="🛣️ सड़क">🛣️ सड़क</option>
+            <option value="💡 बिजली">💡 बिजली</option>
+            <option value="🧹 सफाई">🧹 सफाई</option>
+            <option value="🏥 स्वास्थ्य">🏥 स्वास्थ्य</option>
+            <option value="🏫 शिक्षा">🏫 शिक्षा</option>
+            <option value="🏛️ सरकारी सेवा">🏛️ सरकारी सेवा</option>
+            <option value="अन्य">अन्य</option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="form-group full-width">
+
+        <label for="problemDescription">
+          समस्या का विवरण *
+        </label>
+
+        <textarea
+          id="problemDescription"
+          name="entry.1234567894"
+          required
+          rows="6"
+          placeholder="कृपया अपनी समस्या विस्तार से बताएं">
+        </textarea>
+
+      </div>
+
+      <button type="submit" class="primary-btn submit-btn">
+        समस्या भेजें →
+      </button>
+
+      <p class="form-message" id="problemMessage"></p>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- SUGGESTION -->
+<section id="suggestion" class="suggestion-section">
+
+  <div class="form-container">
+
+    <h2 class="section-title">
+      💡 अपना सुझाव दें
+    </h2>
+
+    <p class="section-description">
+      झारली के विकास के लिए आपका सुझाव महत्वपूर्ण है।
+    </p>
+
+    <form id="suggestionForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd1234567890abcdefghijklmnop/formResponse" method="POST" target="_blank">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="suggestionName">आपका नाम</label>
+
+          <input
+            type="text"
+            id="suggestionName"
+            name="entry.1234567895"
+            placeholder="अपना नाम लिखें">
+        </div>
+
+        <div class="form-group">
+          <label for="suggestionMobile">मोबाइल नंबर</label>
+
+          <input
+            type="tel"
+            id="suggestionMobile"
+            name="entry.1234567896"
+            placeholder="मोबाइल नंबर">
+        </div>
+
+      </div>
+
+      <div class="form-group full-width">
+
+        <label for="suggestionText">
+          आपका सुझाव *
+        </label>
+
+        <textarea
+          id="suggestionText"
+          name="entry.1234567897"
+          required
+          rows="6"
+          placeholder="अपना सुझाव यहां लिखें">
+        </textarea>
+
+      </div>
+
+      <button type="submit" class="primary-btn submit-btn">
+        सुझाव भेजें →
+      </button>
+
+      <p class="form-message" id="suggestionMessage"></p>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- VILLAGE UPDATES -->
+<section id="updates" class="updates-section">
+
+  <h2 class="section-title">
+    📢 झारली की नवीनतम अपडेट्स
+  </h2>
+
+  <div class="updates-grid">
+
+    <article class="update-card">
+
+      <div class="update-date">
+        नई सूचना
+      </div>
+
+      <h3>गांव की महत्वपूर्ण जानकारी</h3>
+
+      <p>
+        यहां भविष्य में ग्राम पंचायत, विकास कार्यों,
+        कार्यक्रमों और महत्वपूर्ण घोषणाओं की जानकारी जोड़ी जा सकती है।
+      </p>
+
+    </article>
+
+    <article class="update-card">
+
+      <div class="update-date">
+        विकास
+      </div>
+
+      <h3>स्थानीय समस्याओं पर कार्य</h3>
+
+      <p>
+        गांव से प्राप्त महत्वपूर्ण समस्याओं और उन पर की गई
+        कार्रवाई की जानकारी यहां प्रकाशित की जा सकती है।
+      </p>
+
+    </article>
+
+    <article class="update-card">
+
+      <div class="update-date">
+        घोषणा
+      </div>
+
+      <h3>ग्राम सभा और कार्यक्रम</h3>
+
+      <p>
+        आगामी बैठकों, कार्यक्रमों और सार्वजनिक सूचनाओं की जानकारी
+        यहां साझा की जाएगी।
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+
+  <h2 class="section-title">
+    नरपत सिंह शेखावत
+  </h2>
+
+  <div class="about-content">
+
+    <img src="candidate.jpg" alt="नरपत सिंह शेखावत">
+
+    <div>
+
+      <h3>झारली के साथ, झारली के विकास के लिए</h3>
+
+      <p>
+        झारली जन संवाद एक ऐसा डिजिटल मंच है जहां गांव के लोग
+        अपनी समस्याएं, सुझाव और विचार साझा कर सकते हैं।
+      </p>
+
+      <p>
+        हमारा उद्देश्य गांव के लोगों और स्थानीय नेतृत्व के बीच
+        बेहतर संवाद और सहभागिता को बढ़ावा देना है।
+      </p>
+
+      <a href="#contact" class="primary-btn">
+        संपर्क करें
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+
+  <h2 class="section-title">
+    कैसे काम करता है?
+  </h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div>1</div>
+      <h3>समस्या बताएं</h3>
+      <p>अपनी समस्या का विवरण भरें।</p>
+    </div>
+
+    <div class="step">
+      <div>2</div>
+      <h3>सुझाव साझा करें</h3>
+      <p>अपने विचार और सुझाव भेजें।</p>
+    </div>
+
+    <div class="step">
+      <div>3</div>
+      <h3>समीक्षा</h3>
+      <p>प्राप्त जानकारी की समीक्षा की जाएगी।</p>
+    </div>
+
+    <div class="step">
+      <div>4</div>
+      <h3>अपडेट देखें</h3>
+      <p>महत्वपूर्ण जानकारी वेबसाइट पर देखें।</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+
+  <h2>संपर्क करें</h2>
+
+  <div class="contact-grid">
+
+    <div class="contact-box">
+
+      <div class="icon">📞</div>
+
+      <h3>मोबाइल</h3>
+
+      <a href="tel:+919929582725">
+        +91 99295 82725
+      </a>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="icon">💬</div>
+
+      <h3>WhatsApp</h3>
+
+      <a
+        href="https://wa.me/919929582725"
+        target="_blank">
+
+        WhatsApp पर संपर्क करें
+
+      </a>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="icon">📍</div>
+
+      <h3>स्थान</h3>
+
+      <p>
+        ग्राम पंचायत झारली, राजस्थान
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <h3>झारली जन संवाद</h3>
+
+  <p>आपकी आवाज़, हमारा संकल्प</p>
+
+  <p>
+    © 2026 झारली जन संवाद | सभी अधिकार सुरक्षित
+  </p>
+
+</footer>
+
+
+<script>
+
+  // MOBILE MENU
+
+  const menuToggle =
+    document.getElementById("menuToggle");
+
+  const navLinks =
+    document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+
+  // PROBLEM FORM - Google Forms
+  const problemForm =
+    document.getElementById("problemForm");
+
+  problemForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const formData = new FormData(problemForm);
+
+    fetch(problemForm.action, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    }).then(() => {
+      document.getElementById("problemMessage").innerHTML =
+        "धन्यवाद! आपकी समस्या दर्ज कर ली गई है।";
+      
+      problemForm.reset();
+      
+      setTimeout(() => {
+        document.getElementById("problemMessage").innerHTML = "";
+      }, 5000);
+    }).catch(error => {
+      document.getElementById("problemMessage").innerHTML =
+        "कृपया पुनः प्रयास करें।";
+    });
+
+  });
+
+
+  // SUGGESTION FORM - Google Forms
+  const suggestionForm =
+    document.getElementById("suggestionForm");
+
+  suggestionForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const formData = new FormData(suggestionForm);
+
+    fetch(suggestionForm.action, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    }).then(() => {
+      document.getElementById("suggestionMessage").innerHTML =
+        "धन्यवाद! आपका सुझाव प्राप्त हो गया है।";
+      
+      suggestionForm.reset();
+      
+      setTimeout(() => {
+        document.getElementById("suggestionMessage").innerHTML = "";
+      }, 5000);
+    }).catch(error => {
+      document.getElementById("suggestionMessage").innerHTML =
+        "कृपया पुनः प्रयास करें।";
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
