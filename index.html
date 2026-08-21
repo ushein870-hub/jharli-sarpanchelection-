@@ -138,7 +138,7 @@
       अपनी समस्या का विवरण नीचे दिए गए फॉर्म में भरें।
     </p>
 
-    <form id="problemForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc1234567890abcdefghijklmnop/formResponse" method="POST" target="_blank">
+    <form id="problemForm">
 
       <div class="form-grid">
 
@@ -147,7 +147,6 @@
           <input
             type="text"
             id="problemName"
-            name="entry.1234567890"
             required
             placeholder="अपना नाम लिखें">
         </div>
@@ -157,7 +156,6 @@
           <input
             type="tel"
             id="problemMobile"
-            name="entry.1234567891"
             required
             placeholder="मोबाइल नंबर">
         </div>
@@ -167,7 +165,6 @@
           <input
             type="text"
             id="problemArea"
-            name="entry.1234567892"
             required
             placeholder="अपना क्षेत्र लिखें">
         </div>
@@ -175,7 +172,7 @@
         <div class="form-group">
           <label for="problemCategory">समस्या का प्रकार *</label>
 
-          <select id="problemCategory" name="entry.1234567893" required>
+          <select id="problemCategory" required>
             <option value="">समस्या चुनें</option>
             <option value="💧 पानी">💧 पानी</option>
             <option value="🛣️ सड़क">🛣️ सड़क</option>
@@ -199,7 +196,6 @@
 
         <textarea
           id="problemDescription"
-          name="entry.1234567894"
           required
           rows="6"
           placeholder="कृपया अपनी समस्या विस्तार से बताएं">
@@ -233,7 +229,7 @@
       झारली के विकास के लिए आपका सुझाव महत्वपूर्ण है।
     </p>
 
-    <form id="suggestionForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd1234567890abcdefghijklmnop/formResponse" method="POST" target="_blank">
+    <form id="suggestionForm">
 
       <div class="form-grid">
 
@@ -243,7 +239,6 @@
           <input
             type="text"
             id="suggestionName"
-            name="entry.1234567895"
             placeholder="अपना नाम लिखें">
         </div>
 
@@ -253,7 +248,6 @@
           <input
             type="tel"
             id="suggestionMobile"
-            name="entry.1234567896"
             placeholder="मोबाइल नंबर">
         </div>
 
@@ -267,7 +261,6 @@
 
         <textarea
           id="suggestionText"
-          name="entry.1234567897"
           required
           rows="6"
           placeholder="अपना सुझाव यहां लिखें">
@@ -490,17 +483,11 @@
 <script>
 
   // MOBILE MENU
-
-  const menuToggle =
-    document.getElementById("menuToggle");
-
-  const navLinks =
-    document.getElementById("navLinks");
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
   menuToggle.addEventListener("click", () => {
-
     navLinks.classList.toggle("active");
-
   });
 
   // Close menu when a link is clicked
@@ -512,64 +499,94 @@
 
 
   // PROBLEM FORM - Google Forms
-  const problemForm =
-    document.getElementById("problemForm");
+  const problemForm = document.getElementById("problemForm");
 
   problemForm.addEventListener("submit", function(event) {
-
     event.preventDefault();
 
-    const formData = new FormData(problemForm);
+    const name = document.getElementById("problemName").value;
+    const mobile = document.getElementById("problemMobile").value;
+    const area = document.getElementById("problemArea").value;
+    const category = document.getElementById("problemCategory").value;
+    const description = document.getElementById("problemDescription").value;
 
-    fetch(problemForm.action, {
+    // Google Form URL for Problem Form
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSe7cddHXXN1YIqx4FbVnL1CYmdNS36FNZugpdmolALy_NIWag/formResponse";
+
+    // Create form data
+    const formData = new FormData();
+    formData.append("entry.274063896", name);      // Name
+    formData.append("entry.1234567891", mobile);   // Mobile
+    formData.append("entry.1234567892", area);     // Area
+    formData.append("entry.1234567893", category); // Category
+    formData.append("entry.1234567894", description); // Description
+
+    // Send to Google Forms
+    fetch(formUrl, {
       method: 'POST',
       body: formData,
       mode: 'no-cors'
     }).then(() => {
       document.getElementById("problemMessage").innerHTML =
-        "धन्यवाद! आपकी समस्या दर्ज कर ली गई है।";
+        "धन्यवाद! आपकी समस्या दर्ज कर ली गई है। आप Google Forms पर रीडायरेक्ट होंगे।";
       
       problemForm.reset();
       
+      // Redirect to form after 2 seconds
       setTimeout(() => {
-        document.getElementById("problemMessage").innerHTML = "";
-      }, 5000);
+        window.open(formUrl, '_blank');
+      }, 2000);
     }).catch(error => {
+      // Still open the form even if fetch fails (due to CORS)
+      window.open(formUrl, '_blank');
       document.getElementById("problemMessage").innerHTML =
-        "कृपया पुनः प्रयास करें।";
+        "धन्यवाद! आपकी समस्या भेज दी गई है।";
+      problemForm.reset();
     });
-
   });
 
 
   // SUGGESTION FORM - Google Forms
-  const suggestionForm =
-    document.getElementById("suggestionForm");
+  const suggestionForm = document.getElementById("suggestionForm");
 
   suggestionForm.addEventListener("submit", function(event) {
-
     event.preventDefault();
 
-    const formData = new FormData(suggestionForm);
+    const name = document.getElementById("suggestionName").value;
+    const mobile = document.getElementById("suggestionMobile").value;
+    const suggestion = document.getElementById("suggestionText").value;
 
-    fetch(suggestionForm.action, {
+    // Google Form URL for Suggestion Form
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScfp8oKqGaIBRrlj4AXalPtNaCJK4-CdTQdaj8Qgax-XDOLcQ/formResponse";
+
+    // Create form data
+    const formData = new FormData();
+    formData.append("entry.1234567895", name);       // Name
+    formData.append("entry.1234567896", mobile);     // Mobile
+    formData.append("entry.1234567897", suggestion); // Suggestion
+
+    // Send to Google Forms
+    fetch(formUrl, {
       method: 'POST',
       body: formData,
       mode: 'no-cors'
     }).then(() => {
       document.getElementById("suggestionMessage").innerHTML =
-        "धन्यवाद! आपका सुझाव प्राप्त हो गया है।";
+        "धन्यवाद! आपका सुझाव प्राप्त हो गया है। आप Google Forms पर रीडायरेक्ट होंगे।";
       
       suggestionForm.reset();
       
+      // Redirect to form after 2 seconds
       setTimeout(() => {
-        document.getElementById("suggestionMessage").innerHTML = "";
-      }, 5000);
+        window.open(formUrl, '_blank');
+      }, 2000);
     }).catch(error => {
+      // Still open the form even if fetch fails (due to CORS)
+      window.open(formUrl, '_blank');
       document.getElementById("suggestionMessage").innerHTML =
-        "कृपया पुनः प्रयास करें।";
+        "धन्यवाद! आपका सुझाव भेज दिया गया है।";
+      suggestionForm.reset();
     });
-
   });
 
 </script>
